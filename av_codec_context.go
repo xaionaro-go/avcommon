@@ -18,6 +18,6 @@ func WrapAVCodecContext(ptr *types.CVoid) *AVCodecContext {
 	return (*AVCodecContext)(CWrapAVCodecContext(ptr))
 }
 
-func (avctx *AVCodecContext) PrivData() *types.CVoid {
-	return (*types.CVoid)(avctx.priv_data)
+func (codecCtx *AVCodecContext) PrivData() *types.CVoid {
+	return (*types.CVoid)(codecCtx.priv_data)
 }

@@ -18,6 +18,10 @@ func WrapAVFormatContext(ptr *types.CVoid) *AVFormatContext {
 	return (*AVFormatContext)(CWrapAVFormatContext(ptr))
 }
 
-func (avctx *AVFormatContext) PrivData() *types.CVoid {
-	return (*types.CVoid)(avctx.priv_data)
+func (fmtCtx *AVFormatContext) PrivData() *types.CVoid {
+	return (*types.CVoid)(fmtCtx.priv_data)
+}
+
+func (fmtCtx *AVFormatContext) Pb() *AVIOContext {
+	return (*AVIOContext)(fmtCtx.pb)
 }

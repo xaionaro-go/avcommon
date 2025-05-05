@@ -18,6 +18,6 @@ func WrapAVIOContext(ptr *types.CVoid) *AVIOContext {
 	return (*AVIOContext)(CWrapAVIOContext(ptr))
 }
 
-func (avctx *AVIOContext) Opaque() *types.CVoid {
-	return (*types.CVoid)(avctx.opaque)
+func (avioCtx *AVIOContext) Opaque() *types.CVoid {
+	return (*types.CVoid)(avioCtx.opaque)
 }

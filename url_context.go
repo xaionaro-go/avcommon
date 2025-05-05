@@ -18,6 +18,6 @@ func WrapURLContext(ptr *types.CVoid) *URLContext {
 	return (*URLContext)(CWrapURLContext(ptr))
 }
 
-func (avctx *URLContext) PrivData() *types.CVoid {
-	return (*types.CVoid)(avctx.priv_data)
+func (urlCtx *URLContext) PrivData() *types.CVoid {
+	return (*types.CVoid)(urlCtx.priv_data)
 }
