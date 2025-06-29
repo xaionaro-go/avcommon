@@ -21,3 +21,7 @@ func WrapURLContext(ptr *types.CVoid) *URLContext {
 func (urlCtx *URLContext) PrivData() *types.CVoid {
 	return (*types.CVoid)(urlCtx.priv_data)
 }
+
+func (urlCtx *URLContext) Protocol() *URLProtocol {
+	return (*URLProtocol)(urlCtx.prot)
+}

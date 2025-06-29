@@ -3,6 +3,7 @@ package avcommon
 // #include "3rdparty/ffmpeg/rtmpproto.c"
 import "C"
 import (
+	"fmt"
 	"unsafe"
 
 	"github.com/xaionaro-go/avcommon/types"
@@ -34,4 +35,21 @@ func (rtmpCtx *RTMPContext) SetApp(app string) {
 	} else {
 		storage[len(app)] = 0
 	}
+}
+
+func (rtmpCtx *RTMPContext) Stream() *URLContext {
+	return (*URLContext)(rtmpCtx.stream)
+}
+
+func (rtmpCtx *RTMPContext) TCPContext() *TCPContext {
+	stream := rtmpCtx.Stream()
+	protocolName := stream.Protocol().Name()
+	if protocolName != "tcp" {
+		panic(fmt.Sprintf("unexpected protocol name: '%s'", protocolName))
+	}
+	return WrapTCPContext(stream.PrivData())
+}
+
+func (rtmpCtx *RTMPContext) GetFileDescriptor() int {
+	return rtmpCtx.TCPContext().FileDescriptor()
 }
