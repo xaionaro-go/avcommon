@@ -1,6 +1,6 @@
 package avcommon
 
-// #include "3rdparty/ffmpeg/url.h"
+// #include "3rdparty/ffmpeg/libavformat/url.h"
 import "C"
 import (
 	"unsafe"

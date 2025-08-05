@@ -1,6 +1,6 @@
 package avcommon
 
-// #include "3rdparty/ffmpeg/tcp.c"
+// #include "3rdparty/ffmpeg/libavformat/tcp.c"
 import "C"
 import (
 	"unsafe"

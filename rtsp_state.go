@@ -1,6 +1,6 @@
 package avcommon
 
-// #include "3rdparty/ffmpeg/rtsp.h"
+// #include "3rdparty/ffmpeg/libavformat/rtsp.h"
 import "C"
 import (
 	"unsafe"

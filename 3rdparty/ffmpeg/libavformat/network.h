@@ -17,6 +17,7 @@
  * License along with FFmpeg; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
+// Adapted for `avcommon` by Dmitrii Okunev, 2026 (LICENSE: CC-0 or WTFPLv2 or GPL2.1)
 
 #ifndef AVFORMAT_NETWORK_H
 #define AVFORMAT_NETWORK_H
@@ -25,7 +26,6 @@
 #include <stdint.h>
 
 #include "libavutil/error.h"
-#include "os_support.h"
 #include "avio.h"
 #include "url.h"
 
@@ -33,7 +33,7 @@
 #include <unistd.h>
 #endif
 
-#if HAVE_WINSOCK2_H
+#if HAVE_WINSOCK2_H || _WIN32
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
@@ -66,6 +66,8 @@ int ff_neterrno(void);
 
 #define ff_neterrno() AVERROR(errno)
 #endif /* HAVE_WINSOCK2_H */
+
+//#include "os_support.h"
 
 #if HAVE_ARPA_INET_H
 #include <arpa/inet.h>
@@ -309,5 +311,8 @@ void ff_log_net_error(void *ctx, int level, const char* prefix);
 int ff_connect_parallel(struct addrinfo *addrs, int timeout_ms_per_address,
                         int parallel, URLContext *h, int *fd,
                         int (*customize_fd)(void *, int, int), void *customize_ctx);
+
+void ff_udp_get_last_recv_addr(URLContext *h, struct sockaddr_storage *addr, socklen_t *addr_len);
+int ff_udp_set_remote_addr(URLContext *h, const struct sockaddr *dest_addr, socklen_t dest_addr_len, int do_connect);
 
 #endif /* AVFORMAT_NETWORK_H */

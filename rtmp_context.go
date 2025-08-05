@@ -1,6 +1,6 @@
 package avcommon
 
-// #include "3rdparty/ffmpeg/rtmpproto.c"
+// #include "3rdparty/ffmpeg/libavformat/rtmpproto.c"
 import "C"
 import (
 	"fmt"

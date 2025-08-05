@@ -28,7 +28,7 @@
 #include "rtpdec.h"
 #include "network.h"
 #include "internal.h"
-#include "os_support.h"
+//#include "os_support.h"
 
 #include <libavutil/log.h>
 #include <libavutil/opt.h>

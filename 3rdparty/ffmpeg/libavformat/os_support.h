@@ -18,6 +18,7 @@
  * License along with FFmpeg; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
+// Adapted for `avcommon` by Dmitrii Okunev, 2026 (LICENSE: CC-0 or WTFPLv2 or GPL2.1)
 
 #ifndef AVFORMAT_OS_SUPPORT_H
 #define AVFORMAT_OS_SUPPORT_H
