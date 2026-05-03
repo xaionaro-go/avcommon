@@ -53,3 +53,11 @@ func (rtmpCtx *RTMPContext) TCPContext() *TCPContext {
 func (rtmpCtx *RTMPContext) GetFileDescriptor() int {
 	return rtmpCtx.TCPContext().FileDescriptor()
 }
+
+func (rtmpCtx *RTMPContext) OutChunkSize() int {
+	return int(rtmpCtx.out_chunk_size)
+}
+
+func (rtmpCtx *RTMPContext) SetOutChunkSize(size int) {
+	rtmpCtx.out_chunk_size = C.int(size)
+}

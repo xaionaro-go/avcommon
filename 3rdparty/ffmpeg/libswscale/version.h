@@ -1,6 +1,4 @@
 /*
- * Version macros.
- *
  * This file is part of FFmpeg.
  *
  * FFmpeg is free software; you can redistribute it and/or
@@ -18,30 +16,29 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef AVFORMAT_VERSION_H
-#define AVFORMAT_VERSION_H
+#ifndef SWSCALE_VERSION_H
+#define SWSCALE_VERSION_H
 
 /**
  * @file
- * @ingroup libavf
- * Libavformat version macros
+ * swscale version macros
  */
 
 #include "libavutil/version.h"
 
 #include "version_major.h"
 
-#define LIBAVFORMAT_VERSION_MINOR   3
-#define LIBAVFORMAT_VERSION_MICRO 100
+#define LIBSWSCALE_VERSION_MINOR   1
+#define LIBSWSCALE_VERSION_MICRO 100
 
-#define LIBAVFORMAT_VERSION_INT AV_VERSION_INT(LIBAVFORMAT_VERSION_MAJOR, \
-                                               LIBAVFORMAT_VERSION_MINOR, \
-                                               LIBAVFORMAT_VERSION_MICRO)
-#define LIBAVFORMAT_VERSION     AV_VERSION(LIBAVFORMAT_VERSION_MAJOR,   \
-                                           LIBAVFORMAT_VERSION_MINOR,   \
-                                           LIBAVFORMAT_VERSION_MICRO)
-#define LIBAVFORMAT_BUILD       LIBAVFORMAT_VERSION_INT
+#define LIBSWSCALE_VERSION_INT  AV_VERSION_INT(LIBSWSCALE_VERSION_MAJOR, \
+                                               LIBSWSCALE_VERSION_MINOR, \
+                                               LIBSWSCALE_VERSION_MICRO)
+#define LIBSWSCALE_VERSION      AV_VERSION(LIBSWSCALE_VERSION_MAJOR, \
+                                           LIBSWSCALE_VERSION_MINOR, \
+                                           LIBSWSCALE_VERSION_MICRO)
+#define LIBSWSCALE_BUILD        LIBSWSCALE_VERSION_INT
 
-#define LIBAVFORMAT_IDENT       "Lavf" AV_STRINGIFY(LIBAVFORMAT_VERSION)
+#define LIBSWSCALE_IDENT        "SwS" AV_STRINGIFY(LIBSWSCALE_VERSION)
 
-#endif /* AVFORMAT_VERSION_H */
+#endif /* SWSCALE_VERSION_H */
